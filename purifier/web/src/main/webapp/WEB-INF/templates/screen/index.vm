@@ -1,0 +1,21 @@
+#set($page = "index")
+<div class="index-c">
+    <div class="pur-i-logo"><img src="/assets/css/img/logo.png" class="pur-i-logo-large" text="logo"></img></div>
+    <div class="pur-i-form">
+        <form id="J_mainForm" method="post" action="/purifier.do">
+            <div>
+                <div class="pur-i-fm-ipt-warp">
+                    <div class="group">
+                        <input class="ipt" type="text" id="words" name="words" value=""/>
+                        <a href="#" class="ipt-bar"><span></span></a>
+                    </div>
+                </div>
+                <div class="pur-i-fm-btn-warp">
+                    <div><a class="btn" href="#" id="J_purBtn"><span>敏感词检查</span></a></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="pur-i-tip"><p>&copy 2003-2015 lh.com 版权所有 </p></div>
+</div>
+<script language="javascript" type="text/javascript" src="/assets/js/index.js" charset="utf-8"></script>

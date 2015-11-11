@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toolbox>
+    <tool>
+        <key>dataUtils</key>
+        <scope>application</scope>
+        <class>org.apache.commons.lang.time.DateUtils</class>
+    </tool>
+
+    <tool>
+        <key>stringUtils</key>
+        <scope>application</scope>
+        <class>org.apache.commons.lang.StringUtils</class>
+    </tool>
+    <tool>
+        <key>numberFormatUtils</key>
+        <scope>application</scope>
+        <class>com.omizil.x.purifier.web.utils.NumberFormatUtils</class>
+    </tool>
+</toolbox>

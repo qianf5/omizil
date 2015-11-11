@@ -1,0 +1,10 @@
+<div id="J_nav" class="site-nav">
+    <div class="menu">
+        <ol>
+            <li #if($page == "index")class="active"#end><a href="./index.htm"><span>Purilier+</span></a></li>
+            <li #if($page == "purifier")class="active"#end><a href="./purifier.htm"><span>过滤</span></a></li>
+        </ol>
+    </div>
+    <div class="quick">
+    </div>
+</div>

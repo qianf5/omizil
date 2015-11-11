@@ -1,0 +1,13 @@
+<div id="J_foot" class="site-foot">
+    <span class="f-s-l">
+        <a href="#"><span>关于我们</span></a>
+        <a href="#"><span>商务</span></a>
+        <a href="#"><span>广告</span></a>
+    </span>
+    <span class="f-s-r">
+        <a href="#"><span>隐私权</span></a>
+        <a href="#"><span>条款</span></a>
+        <a href="#"><span>设置</span></a>
+        <a href="#"><span>使用Purifier</span></a>
+    </span>
+</div>

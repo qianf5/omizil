@@ -1,0 +1,91 @@
+#set($page = "purifier")
+<div id="J_pur_min_bar" class="pur-min-bar">
+    <img class="logo" src="/assets/css/img/logo-small.png">
+    <form id="purifierForm" method="post" action="/purifier.do">
+        <div class="group">
+            <input class="ipt" type="text" id="words" name="words" value="$!{purifiedInput.words}">
+            <a class="bar" href="#"><span></span></a>
+        </div>
+    </form>
+</div>
+
+## start
+#set($genericCnt = 0)
+#set($seriousCnt = 0)
+<div class="pur-con">
+    <div class="pur-nav">&nbsp;</div>
+    <div class="pur-detail">
+        #if($purifiedInput)
+            #set($genericCnt = $purifiedInput.genericWords.size())
+            #set($seriousCnt = $purifiedInput.seriousWords.size())
+            <div class="prased-keys">
+                <div class="words"><p>${purifiedInput.purifiedWords}</p></div>
+                <div class="result-stat"><div class="tip"><span>Stat.</span></div><p>检查到违规词<span class="stat-num">${purifiedCount}</span>处，一般违规词汇<span class="stat-num">${genericCnt}</span>个，严重违规词汇<span class="stat-num">${seriousCnt}</span>个，共耗时<span class="num">${purifiedInput.costSecond}</span>秒。</p></div>
+            </div>
+        #end
+        <div class="rule-explain">
+            #if($purifiedInput)
+                #if($seriousCnt > 0)
+                    <div class="rule-nav">
+                        <ol>
+                            <li  data-id="J_g_rule" class="active"><a href="#"><span>高危规则</span></a></li>
+                        </ol>
+                    </div>
+                    <div id="J_g_rule" class="nav-list">
+                        <ol>
+                            #foreach($k in $purifiedInput.seriousWords)
+                                <li><span class="keyword">$!{k.word}</span><span class="g-rule-i">$!{k.law}</span></li>
+                            #end
+                        </ol>
+                    </div>
+                #end
+                #if($genericCnt > 0)
+                    <div class="rule-nav">
+                        <ol>
+                            <li data-id="J_y_rule" class="active"><a href="#"><span>一般规则</span></a></li>
+                        </ol>
+                    </div>
+                    <div id="J_y_rule" class="nav-list">
+                        <ol>
+                            #foreach($k in $purifiedInput.genericWords)
+                                <li><span class="keyword">$!{k.word}</span><span class="y-rule-i">$!{k.law}</span></li>
+                            #end
+                        </ol>
+                    </div>
+                #end
+                #if($seriousCnt <= 0 && $genericCnt <=0 )
+                    <div class="rule-empty"><p><span class="icon-info"></span><span class="info">没有检查到敏感词</span></p></div>
+                #end
+            #else
+                <div class="rule-empty"><p><span class="icon-info"></span><span class="info">请输入广告语，进行敏感词校验，或者联系我们享受专业的法律服务。</span></p></div>
+            #end
+            <div class="rule-nav">
+                <ol>
+                    <li  data-id="J_r_ser" class="active"><a href="#"><span>人工服务</span></a></li>
+                </ol>
+            </div>
+            <div id="J_r_ser" class="nav-list">
+                <div class="team">
+                    <div class="team-btn"><span class="icon-team"></span></div><p class="info">如果需要更详细多审查服务，请上传相关的资料，我们有专业的律师团队竭诚为您服务。</p>
+                </div>
+                <div class="docs">
+                    <div><span class="title">资料准备</span></div>
+                    <div>
+                        <p class="item"><span class="icon-copy"></span><span class="info">公司营业执照复印件1份</span></p>
+                        <p class="item"><span class="icon-intr"></span><span class="info">产品介绍文档1份</span></p>
+                        <p class="item"><span class="icon-adve"></span><span class="info">广告宣传文档1份</span></p>
+                    </div>
+                </div>
+                <div class="contract">
+                    <div><span class="title">联系我们</span></div>
+                    <div>
+                        <p class="item"><span class="icon-phone"></span><span class="info">电话：0710-88889999</span></p>
+                        <p class="item"><span class="icon-email"></span><span class="info">邮箱：service@purifier.com</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+## end
+<script language="javascript" type="text/javascript" src="/assets/js/purifier.js" charset="utf-8"></script>

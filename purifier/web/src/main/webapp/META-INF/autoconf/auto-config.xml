@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <group name="log-properties" description="log-properties">
+        <property name="purifier.web.logging.root" defaultValue="/home/admin/puriflier/logs" description="日志根目录" />
+        <property name="purifier.web.logging.level" defaultValue="INFO" description="日志级别" />
+        <property name="purifier.web.logging.charset" defaultValue="UTF-8" description="日志编码" />
+    </group>
+
+    <script>
+        <generate template="WEB-INF/web.xml" charset="UTF-8"/>
+        <generate template="WEB-INF/logback.xml" charset="UTF-8"/>
+    </script>
+</config>

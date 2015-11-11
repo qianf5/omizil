@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Puriliey</title>
+        <!--link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" /-->
+        <link rel="stylesheet" type="text/css" href="/assets/css/purifier.css" charset="utf-8" />
+        <script language="javascript" type="text/javascript" src="/assets/js/jquery-1.11.3.min.js" charset="utf-8"></script>
+    </head>
+    <body>
+        ## 定通菜单
+        #parse("/control/site-menu.vm")
+        ## 页面主体内容
+        <div id="J_con" class="content">
+            $screen_content
+        </div>
+        ## 页尾
+        #parse("/control/site-foot.vm")
+    </body>
+</html>
